@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>文本分析</title>
+    <style>
+        #left-banner {
+            background-color:black;
+            color:white;
+            text-align:center;
+            padding:5px;
+        }
+        #button-banner {
+            line-height:30px;
+            background-color:#eeeeee;
+            height:300px;
+            width:210px;
+            float:left;
+            padding:5px;
+        }
+        #right-banner {
+            line-height:30px;
+            background-color:#eeeeee;
+            height:300px;
+            width:210px;
+            float:left;
+            padding:5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+    <p>基本分词</p>
+        <form  id="segment" th:action="@{/global/analyzer}">
+            <textarea  name="terms" rows="15" cols="210"></textarea>
+        </form>
+        <button  href="javascript:void(0)"   onClick="subform('segment')">提交</button>
+    </div>
+
+
+
+    <div>
+        <p>命名实体识别</p>
+        <form  id="nlp" th:action="@{/global/nlpTokenizer}">
+            <textarea  name="terms" rows="15" cols="210"></textarea>
+        </form>
+        <button href="javascript:void(0)"   onClick="subform('nlp')">提交</button>
+    </div>
+
+    <div>
+        <p>关键字提取</p>
+        <form  id="extractKeyword" th:action="@{/global/extractKeyword}">
+            <textarea  name="terms" rows="15" cols="210"></textarea>
+        </form>
+        <button href="javascript:void(0)"   onClick="subform('extractKeyword')">提交</button>
+    </div>
+
+    <div>
+        <p>文章摘要</p>
+        <form  id="extractSummary" th:action="@{/global/extractSummary}">
+            <textarea  name="terms" rows="15" cols="210"></textarea>
+        </form>
+        <button href="javascript:void(0)"   onClick="subform('extractSummary')">提交</button>
+    </div>
+
+    <div>
+        <p>短语提取</p>
+        <form  id=" extractPhrase" th:action="@{/global/extractPhrase}">
+            <textarea  name="terms" rows="15" cols="210"></textarea>
+        </form>
+        <button href="javascript:void(0)"   onClick="subform('extractPhrase')">提交</button>
+    </div>
+
+<script type="text/javascript" >
+    function subform(Id){
+    document.getElementById(Id).submit();
+    }
+</script>
+</body>
+</html>

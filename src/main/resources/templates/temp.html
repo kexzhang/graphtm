@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>编码</td>
+        <td>姓名</td>
+        <td>性别</td>
+    </tr>
+    <tr th:each = "temp:${tempList}">
+        <td th:text = "${temp.id}"></td>
+        <td th:text = "${temp.ename}"></td>
+        <td th:text = "${temp.sex}"></td>
+
+    </tr>
+</table>
+
+</body>
+</html>
